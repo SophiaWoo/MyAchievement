@@ -1,0 +1,30 @@
+div(ng-hide='privilege=="student"')
+    p.tip 您没有访问权限
+div.stucontainer(ng-show='privilege=="student"')
+    div.svg-con
+        div(id='myscore')
+    div.svg-con
+        div(id='myrank')
+    p.tip
+    div.stu(ng-repeat='homework in homeworks | filter:find | orderBy:"id"')
+        div.stuhomeworkblock(class='block-{{homework.state}}')
+            div.stutitle(class='title-{{homework.state}}')
+                span 作业{{homework.id}} {{homework.title}}
+                span.stustate(class='state-{{homework.state}}') {{homework.state}}
+            div.stubody
+                div.mask
+                    div.maskinner(class='mask-{{homework.state}}')
+                        p.stime(ng-show='homework.state=="future"') 作业开始提交时间：{{homework.starttime}}
+                        p.etime(ng-show='homework.state!="past"') 作业截止提交时间：{{homework.endtime}}
+                        div.show(ng-hide='homework.state!="past"') 分数 {{homework.hws[0]}}
+                        div.show(ng-hide='homework.state!="past"') 班级排名 {{homework.hws[1]}}
+                        div.show(ng-hide='homework.state!="past"') 小组排名
+                img.prtscr
+            div.stufoot
+                a(href='{{homework.link}}', target="_blank", type="text/html") 作业链接
+                a.foot-right(href='/review/{{homework.id}}', ng-show='homework.state=="past"') 查看评审
+                a.foot-right(href='/review/{{homework.id}}', ng-show='homework.state=="present"') 评审
+                a.file(href='/upload/{{homework.id}}', ng-show='homework.state=="present"') 提交
+                a.file(href='/download/{{homework.id}}'+'-'+'{{homework.hws[2]}}', ng-show='homework.state=="past"') 源文件
+
+    script(src='javascripts/chart.js')

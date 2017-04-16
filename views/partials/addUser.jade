@@ -1,0 +1,27 @@
+div(ng-hide='privilege=="administrator"')
+  p.tip 您没有访问权限
+div(ng-show='privilege=="administrator"')
+  div.adduserwrap
+    h1.atitle 注册新账号
+    form.adduser(method='post')
+      div.field
+        label(for='userid') userid
+        input(ng-model='user.userid', name='userid')
+      div.field
+        label(for='password') password
+        input(ng-model='user.password', name='password')
+      div.field
+        label(for='username') username
+        input(ng-model='user.username', name='username')
+      div.field
+        label(for='group') group
+        input(ng-model='user.group', name='group')
+        p.format 备注：administrator、teacher、ta 规定组别为 “0”
+      div.field
+        label(for='privilege') privilege
+        input(ng-model='user.privilege', name='privilege')
+        p.format 可填：administrator、teacher、ta、student
+      div.abuttonwrap
+        button.abutton(type='reset') 重 置
+        |  
+        button.abutton(ng-click='submitAddUser()') 注 册

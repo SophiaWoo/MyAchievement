@@ -1,0 +1,26 @@
+div(ng-hide='privilege=="teacher"')
+    p.tip 您没有访问权限
+div(ng-show='privilege=="teacher"')
+    p.tip
+        a.obutton(href='/') 返回
+    p.tip There are {{hws.length}} student'homeworks.
+    p.tip Find the homework: 
+    input.tip(ng-model='find')
+    p.row
+        span.column userid
+        span.column usergroup
+        span.column 作业下载
+        span.widthcolumn TA review
+        span.column score
+        span.column 操作
+    div.row(ng-repeat='hw in hws | filter:find | orderBy:"usergroup"')
+        span.column {{hw.userid}}
+        span.column {{hw.usergroup}}
+        a.column(href='/download/{{hwid}}'+'-'+'{{hw.userid}}') 下载
+        span.widthcolumn(ng-repeat='review in hw.review', ng-show='review.scoregroup=="0"')
+            span.line {{review.scoreid}} : 分数：{{review.score}}
+            span.line 评语：{{review.comment}}
+        input.score(ng-model='hw.score')
+        button.obutton(ng-click='submitScore(hw.userid, hw.score)') 判定分数
+    p.tip
+        button.abutton(ng-click='quickrank()') 一键排名

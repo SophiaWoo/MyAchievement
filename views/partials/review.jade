@@ -1,0 +1,15 @@
+p.tip
+    a.obutton(href='/reviewother/{{homeworkid}}', ng-show='state=="present"') review others
+    a.obutton(href='/') 返回
+div.review
+    ul.tabs
+        li
+            a 查看评审
+    div.tabs-con
+        div.tabs-head hw {{homeworkid}}
+        div.reviewbox(class='sign-{{review.scoregroup}}',ng-repeat='review in reviews | orderBy:"scoregroup"')
+            div.sign-left(class='sign-{{review.scoregroup}}')
+            div.commentbox
+                p {{review.comment}}
+            div.scorebox(class='sign-{{review.scoregroup}}')
+                div {{review.score}}

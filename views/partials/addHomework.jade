@@ -1,0 +1,28 @@
+div(ng-hide='privilege=="teacher"')
+  p.tip 您没有访问权限
+div(ng-show='privilege=="teacher"')
+  div.adduserwrap
+    h1.atitle 发布新作业
+    form.adduser(method='post')
+      div.field
+        label(for ='id') id
+        input(ng-model='homework.id', name='id')
+        p.format 如：第一次作业，id 为 “1”
+      div.field
+        label(for='title') title
+        input(ng-model='homework.title', name='title')
+      div.field
+        label(for='link') link
+        input(ng-model='homework.link', name='link')
+      div.field
+        label(for='starttime') start time
+        input(ng-model='homework.starttime', name='starttime')
+        p.format 格式：yyyy.mm.dd-hh:mm
+      div.field
+        label(for='endtime') end time
+        input(ng-model='homework.endtime', name='endtime')
+        p.format 格式：yyyy.mm.dd-hh:mm
+      div.abuttonwrap
+        button.abutton(type='reset') 重 置
+        |  
+        button.abutton(ng-click='submitAddHomework()') 发 布

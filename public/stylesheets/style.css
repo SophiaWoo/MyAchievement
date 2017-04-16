@@ -1,0 +1,706 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font: 14px 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*login page*/
+.login-main {
+    background: url('../images/bg2.png') no-repeat;
+    height: 100%;
+    background-size: 100% 100%;
+}
+.bg {
+    background-image: url('../images/bg_line.png');
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+
+.login-header {
+    color: #fff;
+    height: 350px;
+    padding: 10% 0 0 10%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.header-my {
+    font-size: 80px;
+    margin: 0 0 10px;
+}
+.header-am {
+    position: relative;
+    top: -25px;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-field {
+    height: 220px;
+    width: 300px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: inline-block;
+    max-width: 100%;
+    margin: 5px 0;
+    color: #fff;
+    font-weight: bold;
+}
+.form-group input {
+    display: block;
+    width: 274px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    padding: 6px 12px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-group input:-webkit-autofill {
+    color: rgb(0, 0, 0);
+    background-color: rgb(250, 255, 189);
+}
+.checkbox-control {
+    width: auto;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.checkbox-control label {
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: bold;   
+}
+.checkbox-control input {
+    margin: 4px 4px 0 0;
+    line-height: normal;
+}
+.login-btn {
+    margin: 10px 0;
+    text-align: center;
+}
+.login-button {
+    width: 100px;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.error {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #a94442;
+}
+/*login page*/
+
+
+/*index page*/
+.navbar {
+  background-color: #1565c0;
+  border-color: #1565c0;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  position: relative;
+  min-height: 50px;
+  z-index: 1000000;
+}
+/*MyAchievement*/
+.navbar-brand{
+    color: #9d9d9d;
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.navbar-brand:hover, .hover:hover {
+    color: #fff;
+}
+/*右边菜单*/
+.container-fluid {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.navbar-right {
+    float: right !important;
+    margin-right: -15px;
+    list-style: none
+}
+.navbar-right > li {
+    float: left;
+    position: relative;
+    display: block;
+}
+.navbar-right > li > a {
+    color: #9d9d9d;
+    padding: 15px;
+    line-height: 20px;
+    display: inline-block;
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+.dropdown[status='open'] > a {
+    color: #fff;
+    background-color: #0d47a1;
+}
+.dropdown-menus-close {
+    display: none;
+}
+.dropdown-menus-open {
+    display: block;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menus-open > li > a {
+    text-align: center;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+.dropdown-menus-open .divider {
+    background-color: #080808;
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+/*index page*/
+
+/*admin page*/
+.row {
+    font-size: 18px;
+    color: #2F3D58;
+    margin: 5px 0px 5px 15px;
+    padding: 5px;
+    border-bottom: 1px solid #000;
+    font-family: 'Microsoft Yahei';
+    width: 1110px;
+}
+.column {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+}
+.widthcolumn {
+    width: 360px;
+    display: inline-block;
+    text-align: left;
+}
+.line {
+    display: block;
+}
+.score {
+    width: 45px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 100px;
+    margin-left: 5px;
+}
+.tip {
+    clear: both;
+    font-size: 22px;
+    margin: 10px 15px;
+    text-align: left;
+}
+.abutton {
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 5px;
+    margin: 5px auto;
+    border-radius: 5px;
+    background-color: #417437;
+    border: none;
+
+}
+/*admin page*/
+
+/*addUser page*/
+ .adduserwrap {
+  width: 600px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #AECEF1;
+} 
+.atitle {
+  font-size: 25px;
+  text-align: center;
+}
+.adduser div {
+  height: 50px;
+  padding: 10px;
+} 
+.adduser label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  padding-right: 20px;
+  font-size: 18px;
+} 
+.adduser input {
+  width: 360px;
+  height: 30px;
+  font-size: 18px;
+  color: #245788;
+}
+.abuttonwrap {
+  text-align: center;
+}
+.format {
+    text-align: center;
+}
+
+/*addUser page*/
+
+/*teacher page*/
+.homeworkblock {
+    display: inline-block;
+    width: 340px;
+    height: 240px;
+    border: 1px solid #000;
+    margin: 15px;
+    float: left;
+    padding: 40px;
+}
+.obutton {
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #B3945B;
+    border: none;
+}
+.stime {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 115px;
+    color: #000;
+}
+.etime {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 140px;
+    color: #000;
+}
+.maskinner .abutton {
+    position: relative;
+    top: 60px;
+}
+/*teacher page*/
+
+/*editScorePrivilege page*/
+.setprivilege {
+    clear: both;
+    width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+.table {
+    padding: 10px;
+}
+.setprivilege span {
+    width: 150px;
+    font-size: 18px;
+    line-height: 24px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #000;
+    color: #fff;
+    background-color: #AD637C;
+}
+.setprivilege input {
+    width: 150px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #000;
+    line-height: 22px;
+    font-size: 16px;
+    color: #D63939;
+}
+/*editScorePrivilege page*/
+
+/*student page*/
+.stucontainer {
+    clear: both;
+    z-index: -1;
+}
+.svg-con {
+    height: 320px;
+    width: 48%;
+    min-width: 400px;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    margin: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    margin-bottom: 10px;
+}
+#myscore, #myrank { 
+    height: 308px;
+}
+
+.stu {
+    padding: 5px;
+    min-width: 320px;
+    width: 24%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.stuhomeworkblock {
+    border-color: #777;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.block-present {
+    border-color: #337ab7 !important;
+}
+.block-future {
+    border-color: #009688 !important;
+}
+.stutitle {
+    color: #fff;
+    background-color: #777;
+    border-color: #777;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.title-present {
+    background-color: #337ab7 !important;
+    border-color: #337ab7 !important;
+}
+.title-future {
+    background-color: #009688 !important;
+    border-color: #009688 !important;
+}
+.stustate {
+    background-color: #bdbdbd;
+    float: right !important;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.state-present {
+    background-color: #5bc0de !important;
+}
+.state-future {
+    background-color: #6AC086 !important;
+}
+
+.stubody {
+    padding: 0;
+    position: relative;
+}
+.mask {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 280px;
+    position: absolute;  
+    padding-right: 11px;
+}
+.maskinner {
+    background-color: rgba(0,0,0,0.7);
+    height: 280px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+     align-items: center; 
+     flex: initial; 
+}
+.mask-present, .mask-future {
+    background-color: #fff !important;
+}
+.show {
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+.prtscr {
+    width: 100%;
+    height: 280px;
+    vertical-align: middle;
+    border: 0;
+}
+.stufoot {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.stufoot a {
+    color: #337ab7;
+}
+.foot-right {
+    float: right !important;
+}
+.file {
+    float: right !important;
+    margin-right: 20px;
+
+}
+/*student page*/
+
+/*review page*/
+.review {
+    clear: both;
+    margin: 0px 10px 0px 10px;
+}
+.tabs {
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    height: 41px;
+}
+.tabs li {
+    float: left;
+    margin-bottom: -1px;
+    position: relative;
+    display: block;
+}
+.tabs li a {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.tabs-con {
+    display: block;
+    clear: both;
+}
+.tabs-head {
+    overflow: hidden;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+.reviewbox {
+    clear: both;
+    margin: 0 10%;
+    min-height: 200px;
+    min-width: 662px;
+    display: flex;
+    overflow: auto;
+    word-break: break-all;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border-color: #009688;
+}
+.sign-left {
+    float: left;
+    width: 1%;
+    margin-top: -1px;
+    background-color: #009688;
+    border-radius: 4px 0 0 4px;
+    flex: initial;
+}
+.reviewbox form {
+    width: 82%;
+    float: left;
+}
+.commentbox {
+    padding: 10px 15px;
+    float: left;
+    width: 82%;
+    min-height: 198px;
+    font-size: 20px;
+    background-color: #eeeeee;
+}
+.commentbox p {
+    margin: 0 0 10px;
+}
+.commentbox textarea {
+    width: 100%;
+    height: 218px;
+    resize: none;
+    font-size: 20px;
+}
+.scorebox {
+    float: left;
+    width: 17%;
+    background-color: #009688;
+    border-radius: 0 3px 3px 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex: initial;
+}
+.scorebox div{
+    width: 100%;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+.sign-0 {
+    border-color: #337ab7;
+    background-color: #337ab7;
+}
+.inputscore {
+    width: 12%;
+    float: left;
+    padding: 80px 0;
+    text-align: center;
+}
+.inputscore p, .inputscore input {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+.inputscore input{
+    font-size: 24px;
+    height: 40px;
+}
+.message {
+    width: 10%;
+    padding-top: 80px;
+    text-align: center;
+}
+.sign-mid {
+    width: 80%
+}
+.sign-right {
+    width: 9%;
+    float: left;
+    background-color: #009688;
+    border-radius: 0 3px 3px 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex: initial;
+}
+/*review page*/
+
+/*upload page*/
+.upload {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+}
+.filebox {
+    border: 1px solid #153913;
+    display: inline-block;
+    width: 80%;
+    height: 60px;
+    font-size: 20px;
+    padding: 40px;
+    margin: 40px auto;
+    background-color: #8D9990;
+}
+/*upload page*/

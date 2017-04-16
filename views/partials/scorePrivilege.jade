@@ -1,0 +1,17 @@
+div(ng-hide='privilege=="teacher"')
+    p.tip 您没有访问权限
+div(ng-show='privilege=="teacher"')
+    div.setprivilege
+        p
+            span.col 用户所属组别
+            span.col 评审人组别
+            span.col 负责TA的id
+        div(ng-repeat='scorePrivilege in scorePrivileges | filter:find | orderBy:"userid"')
+            form(method='post')
+                input.col(ng-model='scorePrivilege.group', name='group')
+                input.col(ng-model='scorePrivilege.scoregroup', name='scoregroup')
+                input.col(ng-model='scorePrivilege.taid', name='taid')
+    div.setprivilege
+        button.abutton(ng-click='submitScorePrivilege()') 设置
+        |  
+        a.abutton(href='/') 返回

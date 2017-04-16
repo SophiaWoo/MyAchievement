@@ -1,0 +1,18 @@
+div(ng-hide='privilege=="ta"')
+    p.tip 您没有访问权限
+div(ng-show='privilege=="ta"')
+    p.tip
+    div.stu(ng-repeat='homework in homeworks | filter:find | orderBy:"id"')
+        div.stuhomeworkblock(class='block-{{homework.state}}')
+            div.stutitle(class='title-{{homework.state}}')
+                span 作业{{homework.id}} {{homework.title}}
+                span.stustate(class='state-{{homework.state}}') {{homework.state}}
+            div.stubody
+                div.mask
+                    div.maskinner(class='mask-{{homework.state}}')
+                        p.stime 作业开始提交时间：{{homework.starttime}}
+                        p.etime 作业截止提交时间：{{homework.starttime}}
+                        a.abutton(href='/reviewother/{{homework.id}}', ng-show='homework.state=="past"') 评审
+                img.prtscr
+            div.stufoot
+                a(href='{{homework.link}}', target="_blank") 作业链接

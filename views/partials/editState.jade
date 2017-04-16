@@ -1,0 +1,14 @@
+div.abuttonwrap
+    form.adduser(method='post')
+        h1.atitle 设置作业homework{{homeworkid}}新状态:
+        div.field
+            label(for='starttime') start time
+            input(ng-model='homework.starttime', name='starttime')
+        div.field
+            label(for='endtime') end time
+            input(ng-model='homework.endtime', name='endtime')
+        button.abutton(ng-click='submitEditState("future")') Future
+        |  
+        button.abutton(ng-click='submitEditState("present")') Present
+        |  
+        button.abutton(ng-click='submitEditState("past")') Past

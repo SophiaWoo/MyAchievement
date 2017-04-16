@@ -1,0 +1,23 @@
+div(ng-hide='privilege=="teacher"')
+    p.tip 您没有访问权限
+div(ng-show='privilege=="teacher"')
+    p.tip
+        a.abutton(href='/addHomework') 发布新作业
+    div.stu(ng-repeat='homework in homeworks | filter:find | orderBy:"id"')
+        div.stuhomeworkblock(class='block-{{homework.state}}')
+            div.stutitle(class='title-{{homework.state}}')
+                span 作业{{homework.id}} {{homework.title}}
+                span.stustate(class='state-{{homework.state}}') {{homework.state}}
+            div.stubody
+                div.mask
+                    div.maskinner(class='mask-{{homework.state}}')
+                        p.stime 作业开始提交时间：{{homework.starttime}}
+                        p.etime 作业截止提交时间：{{homework.starttime}}
+                        div.down
+                        a.abutton(href='/editState/{{homework.id}}') 更改状态
+                        a.abutton(href='/scorePrivilege/{{homework.id}}', ng-show='homework.state=="future"') 设置互评
+                        button.abutton(ng-click='deleteHomework(homework.id)') 删除作业
+                img.prtscr
+            div.stufoot
+                a(href='{{homework.link}}', target="_blank") 作业链接
+                a.foot-right(ng-show='homework.state!="future"', href='/showStudentHomework/{{homework.id}}') 查看学生作业

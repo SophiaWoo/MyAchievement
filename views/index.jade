@@ -1,0 +1,31 @@
+extends layout
+
+block body
+  div(ng-app="myApp")
+    nav.navbar
+      a.navbar-brand(href='/') MyAchievements
+      div.container-fluid
+        ul.navbar-right
+          li
+            a.hover Group#{user.group}
+          li
+            a.hover #{user.userid}
+          li(class='dropdown', status='close')
+            a.menu.hover #{user.username}
+              span.caret.menu
+            ul.dropdown-menus-close
+              li.menu
+                a(href='/changePassword', class='change-password') 修改密码
+              li(role="separator" class="divider")
+              li
+                a(class='logout') 退出
+    div.main(ng-view)
+
+  script(src='javascripts/lib/angular/angular.js')
+  script(src='javascripts/app.js')
+  script(src='javascripts/services.js')
+  script(src='javascripts/controllers.js')
+  script(src='javascripts/filters.js')
+  script(src='javascripts/directives.js')
+  script(src='javascripts/button.js')
+  script(src='javascripts/highcharts.js')

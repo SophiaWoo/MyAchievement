@@ -1,0 +1,24 @@
+p.tip
+    a.obutton(href='/review/{{homeworkid}}', ng-show='nowUser.privilege=="student"') review me
+    a.obutton(href='/') 返回
+div.review
+    ul.tabs
+        li
+            a 评审
+    div.tabs-con
+        div.tabs-head hw {{homeworkid}}
+        div.reviewbox(ng-repeat='hw in hws')
+            div.sign-left(class='sign-{{review.scoregroup}}')
+            div.message
+                p 学号:
+                p {{hw.userid}}
+                p 组别:{{hw.usergroup}}
+                a(href='/download/{{homeworkid}}'+'-'+'{{hw.userid}}') 下载作业
+            form.sign-mid(method='post', ng-repeat='review in hw.review', ng-show='review.scoreid==nowUser.userid')
+                div.commentbox
+                    textarea(ng-model='review.comment')
+                div.inputscore
+                    p 分数
+                    input(ng-model='review.score')
+            div.sign-right
+                button.abutton(ng-click='submitReview($index)') 提交

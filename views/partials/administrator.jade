@@ -1,0 +1,23 @@
+div(ng-hide='privilege=="administrator"')
+    p.tip 您没有访问权限
+div(ng-show='privilege=="administrator"')
+    p.tip
+        a.abutton(href='/addUser') 添加新用户
+    p.tip There are {{users.length}} users.
+    p.tip Find the user: 
+    input.tip(ng-model='find')
+    p.row
+        span.column userid
+        span.column password
+        span.column username
+        span.column group
+        span.column privilege
+        span.column 操作
+    div(ng-repeat='user in users | filter:find | orderBy:"userid"')
+        p.row
+            span.column {{user.userid}}
+            span.column {{user.password}}
+            span.column {{user.username}}
+            span.column {{user.group}}
+            span.column {{user.privilege}}
+            button.abutton(ng-click='deleteUser(user.userid)') 删除
